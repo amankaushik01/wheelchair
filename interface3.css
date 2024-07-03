@@ -1,0 +1,65 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('wheel.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for the container */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.control-btn {
+    padding: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.control-btn:hover {
+    background-color: #0056b3;
+}
+
+.control-btn.blink {
+    animation: blink-animation 0.5s linear 1;
+}
+
+@keyframes blink-animation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+#forward {
+    grid-column: 2 / 3;
+}
+
+#left {
+    grid-column: 1 / 2;
+}
+
+#stop {
+    grid-column: 2 / 3;
+}
+
+#right {
+    grid-column: 3 / 4;
+}
+
+#backward {
+    grid-column: 2 / 3;
+}
